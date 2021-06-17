@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">WebViewInteractionsPoc</string>
+    <string name="notification_content">This is a notification body</string>
+    <string name="notification_channel_id">notification_id</string>
+    <string name="notification_channel_name">notification_channel_name</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="rationale_camera">This app needs access to your camera so you can take pictures.</string>
+    <string name="rationale_location_contacts">This app needs access to your location and contacts to know where and who you are.</string>
+    <string name="returned_from_app_settings_to_activity">
+        Returned from app settings to MainActivity with the following permissions:
+        \n\nCamera: %s
+        \nLocation &amp; Contacts: %s
+        \nSMS: %s
+    </string>
+</resources>

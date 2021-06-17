@@ -1,0 +1,271 @@
+<html>
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+
+
+<style>
+    #outer {
+  width: 100%;
+  text-align: center;
+}
+
+#inner {
+  display: inline-block;
+}
+
+.buttonT{
+background-color: #21A0A0;
+border-width: 0;
+border-radius: 5px;
+  border-style :groove;
+  border-color: #ffffff;
+  padding: .5rem;
+   color: #ffffff;
+height: 50;
+width: 150;
+}
+
+
+</style>
+<body style="height: auto;">
+
+<br>
+<div id="outer">
+
+    <div id="inner">
+
+        <button class="buttonT" onclick="javascript:callNativeAppForToken()">Get JWT</button>
+
+        <label id="note"></label>
+    </div>
+    <br>
+    <br>
+
+    <div id="inner">
+        <input id="inputForAlert" style="height: 50;">
+
+        <br>
+        <br>
+        <button class="buttonT" onclick="javascript:callNativeAppForAlert()">Alert me please
+        </button>
+
+        <label id="note"></label>
+    </div>
+    <br>
+
+    <br>
+    <div id="inner">
+
+        <button class="buttonT" id="buttonOptions"
+                onclick="javascript:callNativeAppForAlertOptions()">Give me options
+        </button>
+
+        <label id="note"></label>
+    </div>
+
+    <br>
+
+    <br>
+    <div id="inner">
+
+        <button class="buttonT" onclick="javascript:callNativeAppForLocation()">Get Location
+        </button>
+
+        <label id="note"></label>
+    </div>
+    <br>
+    <div id="inner">
+        <br>
+        <button class="buttonT" onclick="javascript:callNativeAppForNotification()">Get
+            Notification
+        </button>
+
+        <label id="note"></label>
+    </div>
+    <br>
+    <br>
+    <div id="inner">
+
+
+        <button class="buttonT" onclick="javascript:callNativeAppForUploadPhoto()">Get Photo
+        </button>
+
+        <label id="note"></label>
+
+        <br>
+
+        <img id="imgElem" style="width: 100; height: 100;"></img>
+    </div>
+</div>
+</body>
+
+<script>
+     document.body.style.zoom=2.0;
+
+    // function callNativeAppForPhoto(){
+    //     alert("test alert")
+    // }
+
+    function callNativeAppForLocation(){
+        console.log(name)
+        // var text =  document.getElementById('inputForAlert').value;
+        try {
+        //webkit.messageHandlers.callAppMethodOne.postMessage("Hello from JavaScript");
+
+
+        var type = "Location";
+       var name = "get"
+        var payload = {type: type, param: name};
+
+        var res = prompt(JSON.stringify (payload));
+<!--        callNativeAppForAlertWithParameter(res)-->
+
+
+        // document.getElementById('note').innerHTML = document.getElementById('inputForAlert').value
+        //{"type":"SJbridge","functionName":"functionOne","data":{"name":"abc","role":"dev"}}
+        //res is the response from swift method.
+
+    } catch(err) {
+        console.log('The native context does not exist yet');
+    }
+    }
+
+
+function callNativeAppForNotification(){
+    console.log(name)
+        var text =  document.getElementById('inputForAlert').value;
+        try {
+        //webkit.messageHandlers.callAppMethodOne.postMessage("Hello from JavaScript");
+
+
+        var type = "Notification";
+       var name = text
+        var payload = {type: type, param: name};
+
+        var res = prompt(JSON.stringify (payload));
+<!--        callNativeAppForAlertWithParameter(res)-->
+
+        // document.getElementById('note').innerHTML = document.getElementById('inputForAlert').value
+        //{"type":"SJbridge","functionName":"functionOne","data":{"name":"abc","role":"dev"}}
+        //res is the response from swift method.
+
+    } catch(err) {
+        console.log('The native context does not exist yet');
+    }
+
+
+
+}
+
+
+function callNativeAppForToken(){
+
+    try {
+        //webkit.messageHandlers.callAppMethodOne.postMessage("Hello from JavaScript");
+
+
+        var type = "Token";
+       var name = "get"
+        var payload = {type: type, param: name};
+
+        var res = prompt(JSON.stringify (payload));
+<!--        callNativeAppForAlertWithParameter(res)-->
+
+        // document.getElementById('note').innerHTML = document.getElementById('inputForAlert').value
+        //{"type":"SJbridge","functionName":"functionOne","data":{"name":"abc","role":"dev"}}
+        //res is the response from swift method.
+
+    } catch(err) {
+        console.log('The native context does not exist yet');
+    }
+
+
+}
+    function callNativeAppForAlert(){
+
+
+        console.log(name)
+        var text =  document.getElementById('inputForAlert').value;
+        try {
+
+
+
+        var type = "Alert";
+       var name = text
+        var payload = {type: type, param: name};
+ //res is the response from swift method.
+        var res = prompt(JSON.stringify (payload));
+
+
+    } catch(err) {
+        console.log('The native context does not exist yet');
+    }
+
+}
+
+function callNativeAppForAlertWithParameter(textL){
+
+
+        console.log(name)
+        var text =  textL
+        try {
+
+
+        var type = "Alert";
+       var name = text
+        var payload = {type: type, param: name};
+        //res is the response from swift method.
+        var res = prompt(JSON.stringify (payload));
+
+
+    } catch(err) {
+        console.log('The native context does not exist yet');
+    }
+
+}
+
+function callNativeAppForAlertOptions (){
+
+         try {
+        //webkit.messageHandlers.callAppMethodOne.postMessage("Hello from JavaScript");
+
+
+        var type = "AlertOptions";
+       var name = {op1:"blue", op2 : "red"}
+        var payload = {type: type, param: name};
+        //res is the response from swift method.
+        var res = prompt(JSON.stringify (payload));
+
+document.getElementById("buttonOptions").style.backgroundColor = res
+
+
+
+    } catch(err) {
+        console.log('The native context does not exist yet');
+    }
+}
+
+
+function callNativeAppForUploadPhoto(){
+
+  try {
+
+ var type = "Upload";
+var name = "photo"
+ var payload = {type: type, param: name};
+ var res = prompt(JSON.stringify (payload));
+
+<!--document.getElementById("imgElem").setAttribute('src', "data:image/jpeg;base64," + res);-->
+
+
+
+} catch(err) {
+ console.log('The native context does not exist yet');
+}
+}
+
+
+
+</script>
+
+</html>
